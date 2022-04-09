@@ -10,7 +10,7 @@ variables:
 steps:
 - task: CmdLine@2
   inputs:
-    script: 'az login --service-principal -u $(SP ID) -p $(SP Pwd)'
+    script: 'az login --service-principal -u $(SP ID) -p $(SP Pwd) --tenant $(Tenant ID)'
 # - task: Docker@2
 #   displayName: Build an image
 #   inputs:
