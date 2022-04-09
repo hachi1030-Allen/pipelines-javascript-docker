@@ -12,7 +12,7 @@ steps:
   inputs:
     script: |
       az login --service-principal -u $(SP ID) -p $(SP Pwd) --tenant $(Tenant ID)
-      az acr build --image sample-js:v1 --registry azdoselfhostedagentacr --file Dockerfile ./app/
+      az acr build --image sample-js:v1 ./app --registry azdoselfhostedagentacr --file ./app/Dockerfile
 
 
 # - task: Docker@2
