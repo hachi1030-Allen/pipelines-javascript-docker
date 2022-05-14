@@ -11,8 +11,11 @@ steps:
 - task: CmdLine@2
   inputs:
     script: |
-      az login --service-principal -u $(Private SP ID) -p $(Private SP Pwd) --tenant $(Tenant ID)
-      az acr build --image sample-js:$(Build.BuildId) ./app --registry $(acrRegistryName) --file ./app/Dockerfile
+      go version
+      img version
+
+      # az login --service-principal -u $(Private SP ID) -p $(Private SP Pwd) --tenant $(Tenant ID)
+      # az acr build --image sample-js:$(Build.BuildId) ./app --registry $(acrRegistryName) --file ./app/Dockerfile
 
 
 # - task: Docker@2
