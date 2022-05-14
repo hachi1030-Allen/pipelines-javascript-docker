@@ -14,6 +14,9 @@ steps:
       go version
       img version
 
+      img login $(acrRegistryUrl) -u $(acrUsername) -p $(acrPassword)
+      img build -t $(acrRegistryUrl)/sample-js:$(Build.BuildId) ./app
+
       # az login --service-principal -u $(Private SP ID) -p $(Private SP Pwd) --tenant $(Tenant ID)
       # az acr build --image sample-js:$(Build.BuildId) ./app --registry $(acrRegistryName) --file ./app/Dockerfile
 
